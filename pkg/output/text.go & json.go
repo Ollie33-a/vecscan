@@ -7,7 +7,7 @@ import (
     "time"
 
     "github.com/fatih/color"
-    "github.com/vectalithlabs/vecscan/pkg/scanner"
+    "github.com/Ollie33-a/vecscan/pkg/scanner"
 )
 
 // PrintSummary prints a formatted scan summary

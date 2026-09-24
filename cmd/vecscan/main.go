@@ -12,10 +12,10 @@ import (
 
     "github.com/fatih/color"
     "github.com/spf13/cobra"
-    "github.com/vectalithlabs/vecscan/internal/config"
-    "github.com/vectalithlabs/vecscan/pkg/output"
-    "github.com/vectalithlabs/vecscan/pkg/scanner"
-    "github.com/vectalithlabs/vecscan/pkg/utils"
+    "github.com/Ollie33-a/vecscan/internal/config"
+    "github.com/Ollie33-a/vecscan/pkg/output"
+    "github.com/Ollie33-a/vecscan/pkg/scanner"
+    "github.com/Ollie33-a/vecscan/pkg/utils"
 )
 
 var (

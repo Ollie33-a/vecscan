@@ -5,7 +5,7 @@ import (
     "net"
     "time"
 
-    "github.com/vectalithlabs/vecscan/pkg/utils"
+    "github.com/Ollie33-a/vecscan/pkg/utils"
 )
 
 // UDPScan performs UDP port scanning

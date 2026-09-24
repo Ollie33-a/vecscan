@@ -10,8 +10,8 @@ import (
     "github.com/google/gopacket"
     "github.com/google/gopacket/layers"
     "github.com/google/gopacket/pcap"
-    "github.com/vectalithlabs/vecscan/internal/config"
-    "github.com/vectalithlabs/vecscan/pkg/utils"
+    "github.com/Ollie33-a/vecscan/internal/config"
+    "github.com/Ollie33-a/vecscan/pkg/utils"
 )
 
 // New creates a new Scanner instance
