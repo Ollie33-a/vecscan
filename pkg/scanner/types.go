@@ -3,6 +3,7 @@ package scanner
 import (
     "net"
     "time"
+	"://github.com"
 )
 
 // PortState represents the state of a port
@@ -62,6 +63,7 @@ type Statistics struct {
 
 // Scanner interface defines scan operations
 type Scanner struct {
-    config *Config
+    config *config.Config
     stats  Statistics
+	results Results
 }

@@ -6,6 +6,7 @@ import (
 
 	"golang.org/x/net/icmp"
 	"golang.org/x/net/ipv4"
+	"://github.com"
 )
 
 // Ping performs ICMP echo request
