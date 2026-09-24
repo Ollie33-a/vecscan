@@ -1,0 +1,135 @@
+# ═══════════════════════════════════════════════════════════
+# VECSCAN QUICK REFERENCE
+# ═══════════════════════════════════════════════════════════
+
+# 1. BASIC SCANS
+# ─────────────────────────────────────────────────────────
+# Scan top 1000 ports (default)
+vecscan 192.168.1.1
+
+# Scan specific ports
+vecscan 192.168.1.1 -p 22,80,443,3306
+
+# Scan port range
+vecscan 192.168.1.1 -p 1-1000
+
+# Scan all 65535 ports
+sudo vecscan 192.168.1.1 --all-ports
+
+
+# 2. SCAN TYPES
+# ─────────────────────────────────────────────────────────
+# TCP SYN scan (stealth, requires root)
+sudo vecscan 192.168.1.1 -sS
+
+# TCP Connect scan (no root needed)
+vecscan 192.168.1.1 --connect
+
+# TCP ACK scan (firewall mapping)
+sudo vecscan 192.168.1.1 -sA
+
+# Stealth scans (FIN/NULL/Xmas)
+sudo vecscan 192.168.1.1 -sF    # FIN
+sudo vecscan 192.168.1.1 -sN    # NULL
+sudo vecscan 192.168.1.1 -sX    # Xmas
+
+# UDP scan
+sudo vecscan 192.168.1.1 -sU -p 53,161,162
+
+
+# 3. FIREWALL EVASION
+# ─────────────────────────────────────────────────────────
+# Fragment packets
+sudo vecscan 192.168.1.1 --fragment -p 1-1000
+
+# Custom fragment size
+sudo vecscan 192.168.1.1 --fragment --mtu 8
+
+# Spoof source port
+sudo vecscan 192.168.1.1 --source-port 53
+
+# Spoof source IP
+sudo vecscan 192.168.1.1 --spoof 10.0.0.1
+
+# Bad checksum
+sudo vecscan 192.168.1.1 --badsum
+
+# Combined evasion
+sudo vecscan 192.168.1.1 --fragment --source-port 53 -sF
+
+
+# 4. PERFORMANCE TUNING
+# ─────────────────────────────────────────────────────────
+# Rate limiting (packets per second)
+vecscan 192.168.1.1 --rate 500
+
+# Concurrency control
+vecscan 192.168.1.1 -c 200
+
+# Timeout adjustment
+vecscan 192.168.1.1 -t 5
+
+# Fast scan
+sudo vecscan 192.168.1.1 --rate 10000 -c 500 -t 2
+
+
+# 5. OUTPUT OPTIONS
+# ─────────────────────────────────────────────────────────
+# JSON output
+vecscan 192.168.1.1 -o results.json
+
+# Verbose mode
+vecscan 192.168.1.1 -v
+
+# No color
+vecscan 192.168.1.1 --no-color
+
+
+# 6. NETWORK RANGES
+# ─────────────────────────────────────────────────────────
+# CIDR notation
+sudo vecscan 192.168.1.0/24 -p 22,80,443
+
+# Multiple targets
+sudo vecscan 192.168.1.1,192.168.1.10,192.168.1.20
+
+
+# 7. FILTERED PORT HANDLING
+# ─────────────────────────────────────────────────────────
+# Auto-scan filtered ports
+sudo vecscan 192.168.1.1 --scan-filtered
+
+# Or let it prompt interactively
+sudo vecscan 192.168.1.1
+# [?] Scan filtered ports with evasion techniques? [Y/n]: Y
+
+
+
+# 8. GITHUB WORKFLOW
+# ─────────────────────────────────────────────────────────
+# Clone and install on Kali
+sudo apt update && sudo apt install golang git make
+cd /opt
+sudo git clone https://github.com/YOUR_USERNAME/vecscan.git
+cd vecscan
+make build
+sudo make install
+
+# Verify installation
+vecscan --version
+which vecscan
+
+
+# 9. TROUBLESHOOTING
+# ─────────────────────────────────────────────────────────
+# Fix "too many open files"
+ulimit -n 65535
+
+# Run with full privileges
+sudo vecscan [target] [options]
+
+# Check binary location
+whereis vecscan
+
+# Rebuild after changes
+cd /opt/vecscan && make build && sudo make install
