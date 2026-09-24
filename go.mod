@@ -1,4 +1,4 @@
-module github.com/vectalithlabs/vecscan
+module github.com/Ollie33-a/vecscan
 
 go 1.21
 
