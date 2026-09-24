@@ -21,13 +21,13 @@ const (
 
 // PortInfo contains information about a scanned port
 type PortInfo struct {
-    Port        int       `json:"port"`
-    Protocol    string    `json:"protocol"`
-    State       PortState `json:"state"`
-    Service     string    `json:"service"`
-    Version     string    `json:"version,omitempty"`
-    Banner      string    `json:"banner,omitempty"`
-    Reason      string    `json:"reason"`
+    Port        int       	`json:"port"`
+    Protocol    string    	`json:"protocol"`
+    State       PortState 	`json:"state"`
+    Service     string    	`json:"service"`
+    Version     string    	`json:"version,omitempty"`
+    Banner      string    	`json:"banner,omitempty"`
+    Reason      string    	`json:"reason"`
     ResponseTime time.Duration `json:"response_time"`
 }
 
