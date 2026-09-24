@@ -4,7 +4,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/Ollie33-a/vecscan/pkg/packet"
+	"github.com/Ollie33-a/vecscan/pkg"
 )
 
 type PortState string
