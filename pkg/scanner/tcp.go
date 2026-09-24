@@ -12,7 +12,6 @@ import (
     "github.com/google/gopacket/pcap"
     "github.com/vectalithlabs/vecscan/internal/config"
     "github.com/vectalithlabs/vecscan/pkg/utils"
-	"://github.com"
 )
 
 // New creates a new Scanner instance
