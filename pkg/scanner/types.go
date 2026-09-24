@@ -4,9 +4,9 @@ import (
     "net"
     "time"
 
-	
-	"://github.com"
+    "://github.com"
 )
+
 
 // PortState represents the state of a port
 type PortState string
