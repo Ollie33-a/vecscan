@@ -1,10 +1,8 @@
 package utils
 
 import (
-    "bufio"
     "fmt"
     "net"
-    "os"
     "strconv"
     "strings"
 )
